@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iluminando o Futuro - ONG</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <img src="./assets/iluminando.png" alt="Logo Iluminando o Futuro" class="logo-img">
+            <span class="logo-text">Iluminando o Futuro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#voluntario">Seja Voluntário</a>
+            <a href="#doacao">Doe</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Iluminando o Futuro</h1>
+            <p>Juntos podemos transformar vidas e construir um futuro melhor</p>
+            <a href="#doacao" class="btn btn-primary">Faça uma Doação</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2 class="section-title">Sobre Nós</h2>
+        <div class="about-content">
+            <p>A ONG Iluminando o Futuro trabalha incansavelmente para transformar a vida de crianças e jovens através da educação e desenvolvimento pessoal. Nossa missão é criar oportunidades e iluminar caminhos para um futuro promissor.</p>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <h2 class="section-title">Nossos Projetos</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="./assets/quadrillha.PNG" alt="Projeto Quadrilha">
+                <div class="project-info">
+                    <h3>Quadrilha Junina Solidária</h3>
+                    <p>Promovemos a integração comunitária e valorizamos a cultura brasileira através da nossa animada Quadrilha Junina, com danças e tradições típicas.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="./assets/setembro.PNG" alt="Projeto Setembro">
+                <div class="project-info">
+                    <h3>Setembro Amarelo</h3>
+                    <p>Realizamos ações de conscientização sobre a importância da saúde mental, com palestras, rodas de conversa e atividades voltadas ao acolhimento e ao bem-estar.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2 class="section-title">Galeria</h2>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="./assets/flamengoil.PNG" alt="Imagem 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/leitura.PNG" alt="Imagem 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/passeio.PNG" alt="Imagem 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/natal.PNG" alt="Imagem 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/quadrillha.PNG" alt="Imagem 5">
+                </div>
+            </div>
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="videos">
+      <h2 class="section-title">Nossos Vídeos</h2>
+      <div class="video-grid">
+          <div class="video-card">
+              <div class="video-container">
+                  <iframe 
+                      src="./assets/vemler.mp4" 
+                      title="Projeto Vem Ler" 
+                      frameborder="0" 
+                      allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+                  </iframe>
+              </div>
+              <div class="video-info">
+                  <h3>Vem Ler</h3>
+                  <p>Essa iniciativa é fruto da parceria entre o Departamento de Responsabilidade Social do Flamengo e o Educativo do Museu Flamengo, promovendo a educação e o acesso à leitura na comunidade. Confira no vídeo como foi essa inspiradora ação!</p>
+              </div>
+          </div>
+        
+      </div>
+  </section>
+
+  <section id="voluntario">
+    <h2 class="section-title">Seja Voluntário</h2>
+    <form class="volunteer-form" id="volunteerForm">
+        <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="area">Área de Interesse</label>
+            <select id="area" required>
+                <option value="">Selecione uma área</option>
+                <option value="educacao">Educação</option>
+                <option value="cultura">Arte e Cultura</option>
+                <option value="esporte">Esporte</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</section>
+
+
+<section id="doacao">
+    <h2 class="section-title">Faça uma Doação</h2>
+    <div class="donation-options">
+        <div class="donation-card">
+            <h3>Doação via Pix</h3>
+            <p>Escaneie o QR Code abaixo para fazer sua doação</p>
+            <img src="./assets/qrcode.png" alt="QR Code Pix" class="qrcode-pix">
+            <!-- Chave Pix abaixo do QR Code -->
+            <div class="pix-info">
+                <p>Chave Pix: 123.456.789.00</p>
+                <button class="btn btn-primary" onclick="copyPixKey()" id="copyPixBtn">Copiar Chave</button>
+            </div>
+        </div>
+        <div class="donation-card">
+            <h3>Doação de  Materiais</h3>
+            <p>Doe materiais, equipamentos ou alimentos</p>
+            <img src="./assets/mate.jpg" alt="QR Code Pix" class="qrcode-pix">
+            <button class="btn btn-primary" onclick="openModal()">Saiba Mais</button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<!-- Modal de Doação -->
+<div id="donationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Doe Materiais</h2>
+        <form id="donationForm">
+            <div class="form-group">
+                <label for="named">Nome Completo</label>
+                <input type="text" id="named" required>
+            </div>
+            <div class="form-group">
+                <label for="emaild">E-mail</label>
+                <input type="email" id="emaild" required>
+            </div>
+            <div class="form-group">
+                <label for="material">Materiais para Doação</label>
+                <textarea id="material" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="pickup">Necessita Retirada?</label>
+                <select id="pickup" required>
+                    <option value="">Selecione</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+            <div class="form-group" id="addressGroup" style="display: none;">
+                <label for="address">Endereço em caso de retirada</label>
+                <textarea id="address" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+
+    <footer>
+        <p>© 2024 Iluminando o Futuro - Todos os direitos reservados</p>
+        <div class="social-links">
+            <a 
+            target="_blank"
+            href="https://l.instagram.com/?u=http%3A%2F%2Fwa.me%2F5521968828026%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaa0-0KMH4hqICrfixmF8wk9iJzkYk4uSWvL0AgM9iCUUWsWDeFlHnMVLYI_aem_sUWpE5Tgq7s_JL90tWZCDg&e=AT0DdBXCeKKlKfjfY_NoTrG3T3uLuDV0d2feMCyUSsQwJS3frVyjwmr0rMgAwiAo_j6W-tLRCJ1oURI7E_PmjlWJcG3C87TLK22qUFq5UNyfMlOlzlQJNg"
+            ><i class="fab fa-whatsapp"></i></a>
+            <a target="_blank" href="https://www.instagram.com/iluminandoofuturo/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
