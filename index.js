@@ -58,112 +58,72 @@ function copyPixKey() {
     try {
         const successful = document.execCommand("copy");
         if (successful) {
-            showCopyNotification("Chave Pix copiada com sucesso!");
+            showCopyNotification("Chave Pix copiada com sucesso!", false);
         } else {
-            showCopyNotification("Falha ao copiar a chave Pix.");
+            showCopyNotification("Falha ao copiar a chave Pix.", true);
         }
     } catch (err) {
-        console.error("Erro ao copiar a chave Pix: ", err);
-        showCopyNotification("Erro ao copiar a chave Pix.");
+        showCopyNotification("Erro ao copiar a chave Pix.", true);
     }
 
     document.body.removeChild(tempInput);
 }
 
-// Envvio do email de voluntario
-(function() {
-    emailjs.init("CNl5XnNQQ79jCbrag");  
-})();
-
-document.getElementById('volunteerForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
+function sendVolunteerWhatsApp() {
     const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
     const area = document.getElementById('area').value;
-    const message = document.getElementById('message').value;
 
-    emailjs.send("service_jpu7pto", "template_x90kf6r", {
-        from_name: name,
-        from_email: email,
-        phone: phone,
-        area_of_interest: area,
-        message: message
-    })
-    .then(function(response) {
-        console.log('Sucesso:', response);
-        showCopyNotification("Formulário enviado com sucesso!");  
-        // Limpar o formulário após envio
-        document.getElementById('volunteerForm').reset();  
-    }, function(error) {
-        console.error('Erro:', error);
-        showCopyNotification("Falha ao enviar o formulário.");  
-    });
-});
+    if (name && area) {
+        const message = `Olá, meu nome é ${name}. Gostaria de ser voluntário na área de ${area}.`;
+        const phoneNumber = "5521968828026"; // Número do WhatsApp da ONG
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    } else {
+        showCopyNotification('Por favor, preencha todos os campos.', true);
+    }
+}
+
+function sendDonationWhatsApp() {
+    const name = document.getElementById('named').value;
+    const material = document.getElementById('material').value;
+    const pickup = document.getElementById('pickup').value;
+    const address = document.getElementById('address').value;
 
 
-// Envio do email da doação de materiais
-document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("CNl5XnNQQ79jCbrag");
-
-    const pickupField = document.getElementById("pickup");
-    const addressGroup = document.getElementById("addressGroup");
-
-    
-    pickupField.addEventListener("change", function () {
-        if (pickupField.value === "sim") {
-            addressGroup.style.display = "block"; 
+    if (name && material && pickup) {
+        let message = `Olá, meu nome é ${name}. Gostaria de doar os seguintes materiais: ${material}. `;
+        if (pickup === 'sim') {
+            message += `Necessito de retirada no endereço: ${address || 'Não informado'}.`;
         } else {
-            addressGroup.style.display = "none"; 
+            message += `Não necessito de retirada.`;
         }
-    });
 
-    document.getElementById("donationForm").addEventListener("submit", function (event) {
-        event.preventDefault();
+        const phoneNumber = "5521968828026"; // Número do WhatsApp da ONG
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    } else {
+        showCopyNotification('Por favor, preencha todos os campos.', true);
+    }
+}
 
-        // Coleta os valores dos campos
-        const name = document.getElementById("named").value;
-        const email = document.getElementById("emaild").value;
-        const material = document.getElementById("material").value;
-        const pickup = document.getElementById("pickup").value;
-        const address = document.getElementById("address").value; 
+function toggleAddress() {
+    const pickup = document.getElementById('pickup').value;
+    const addressGroup = document.getElementById('addressGroup');
+    addressGroup.style.display = pickup === 'sim' ? 'block' : 'none';
+}
 
-        const payload = {
-            from_name: name || "Nome não fornecido",
-            from_email: email || "Email não fornecido",
-            materials_for_donation: material || "Materiais não especificados",
-            pickup_needed: pickup,
-        };
-        
-        if (pickup === "sim" && address) {
-            payload.pickup_address = address;
-        } else {
-            payload.pickup_address = null; 
-        }
-        
-        emailjs
-            .send("service_jpu7pto", "template_kbk2zei", payload)
-            .then(
-                function (response) {
-                    showCopyNotification("Formulário de doação enviado com sucesso!");
-                    document.getElementById("donationForm").reset();
-                    addressGroup.style.display = "none"; 
-                },
-                function (error) {
-                    showCopyNotification("Falha ao enviar o formulário de doação.");
-                }
-            );
-    });
-});
-
-
-function showCopyNotification(message) {
+function showCopyNotification(message, isError) {
     const notification = document.createElement("div");
     notification.classList.add("copy-notification");
+    notification.classList.add(isError ? "error" : "success");  
     notification.innerText = message;
 
     document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add("hide");
+    }, 5000);
+
     setTimeout(() => {
         notification.remove();
     }, 6000);

@@ -35,6 +35,141 @@ nav {
   margin: 0 auto;
 }
 
+.sobre {
+  line-height: 25px;
+}
+
+.horario {
+  background-color: var(--primary-dark);
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  color: var(--text-light);
+}
+
+.horario h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.horario p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+#parcerias {
+  padding: 4rem 2rem;
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+
+.partnership-carousel {
+  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do container */
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  animation: moveCarousel 15s linear infinite; /* Move o carrossel continuamente */
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Impede o item de crescer ou encolher */
+  width: 200px; /* Largura fixa para as logos */
+  margin: 0 1rem; /* Espaço entre os itens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Animação para mover o carrossel a partir de uma posição específica */
+@keyframes moveCarousel {
+  0% {
+      transform: translateX(0) translateY(0); /* Começa no ponto X=0 e Y=0 */
+  }
+  25% {
+      transform: translateX(200px) translateY(0); /* Move um pouco para a direita */
+  }
+  50% {
+      transform: translateX(400px) translateY(0); /* Move mais para a direita */
+  }
+  75% {
+      transform: translateX(600px) translateY(0); /* Move ainda mais para a direita */
+  }
+  100% {
+      transform: translateX(0) translateY(0); /* Retorna ao início para o ciclo */
+  }
+}
+#parcerias {
+  padding: 4rem 2rem;
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+
+.partnership-carousel {
+  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do container */
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  animation: moveCarousel 15s linear infinite; /* Move o carrossel continuamente */
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Impede o item de crescer ou encolher */
+  width: 200px; /* Largura fixa para as logos */
+  margin: 0 1rem; /* Espaço entre os itens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Animação para mover o carrossel a partir de uma posição específica */
+@keyframes moveCarousel {
+  0% {
+      transform: translateX(0) translateY(0); /* Começa no ponto X=0 e Y=0 */
+  }
+  25% {
+      transform: translateX(200px) translateY(0); /* Move um pouco para a direita */
+  }
+  50% {
+      transform: translateX(400px) translateY(0); /* Move mais para a direita */
+  }
+  75% {
+      transform: translateX(600px) translateY(0); /* Move ainda mais para a direita */
+  }
+  100% {
+      transform: translateX(0) translateY(0); /* Retorna ao início para o ciclo */
+  }
+}
+
+
 .logo {
   display: flex;
   align-items: center;
@@ -356,6 +491,24 @@ section {
   position: relative;
 }
 
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: var(--primary-dark);
+}
+
+
 .close {
   position: absolute;
   top: 10px;
@@ -446,6 +599,14 @@ footer {
   z-index: 9999;
   opacity: 0;
   animation: fadeInOut 2s forwards;
+}
+
+.copy-notification.success {
+  background-color: #4CAF50;  
+}
+
+.copy-notification.error {
+  background-color: #F44336;  
 }
 
 @keyframes fadeInOut {
