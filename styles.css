@@ -83,7 +83,7 @@ nav {
 
 .carousel-item {
   flex: 0 0 auto; /* Impede o item de crescer ou encolher */
-  width: 200px; /* Largura fixa para as logos */
+  width: 150px; /* Largura menor para as logos */
   margin: 0 1rem; /* Espaço entre os itens */
   display: flex;
   justify-content: center;
@@ -98,74 +98,19 @@ nav {
 /* Animação para mover o carrossel a partir de uma posição específica */
 @keyframes moveCarousel {
   0% {
-      transform: translateX(0) translateY(0); /* Começa no ponto X=0 e Y=0 */
+    transform: translateX(0);
   }
   25% {
-      transform: translateX(200px) translateY(0); /* Move um pouco para a direita */
+    transform: translateX(-200px); /* Mover para a esquerda */
   }
   50% {
-      transform: translateX(400px) translateY(0); /* Move mais para a direita */
+    transform: translateX(-400px); /* Move mais para a esquerda */
   }
   75% {
-      transform: translateX(600px) translateY(0); /* Move ainda mais para a direita */
+    transform: translateX(-600px); /* Move ainda mais para a esquerda */
   }
   100% {
-      transform: translateX(0) translateY(0); /* Retorna ao início para o ciclo */
-  }
-}
-#parcerias {
-  padding: 4rem 2rem;
-  background-color: var(--background-light);
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: var(--primary-dark);
-  margin-bottom: 2rem;
-}
-
-.partnership-carousel {
-  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do container */
-  width: 100%;
-  position: relative;
-}
-
-.carousel-wrapper {
-  display: flex;
-  animation: moveCarousel 15s linear infinite; /* Move o carrossel continuamente */
-}
-
-.carousel-item {
-  flex: 0 0 auto; /* Impede o item de crescer ou encolher */
-  width: 200px; /* Largura fixa para as logos */
-  margin: 0 1rem; /* Espaço entre os itens */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-}
-
-/* Animação para mover o carrossel a partir de uma posição específica */
-@keyframes moveCarousel {
-  0% {
-      transform: translateX(0) translateY(0); /* Começa no ponto X=0 e Y=0 */
-  }
-  25% {
-      transform: translateX(200px) translateY(0); /* Move um pouco para a direita */
-  }
-  50% {
-      transform: translateX(400px) translateY(0); /* Move mais para a direita */
-  }
-  75% {
-      transform: translateX(600px) translateY(0); /* Move ainda mais para a direita */
-  }
-  100% {
-      transform: translateX(0) translateY(0); /* Retorna ao início para o ciclo */
+    transform: translateX(0); /* Retorna ao início para o ciclo */
   }
 }
 
@@ -675,5 +620,31 @@ footer {
   
   .section-title {
       font-size: 2rem;
+  }
+
+  .carousel-item {
+    width: 120px; /* Diminuir a largura das imagens em dispositivos móveis */
+  }
+
+  .carousel-wrapper {
+    animation: moveCarouselMobile 10s linear infinite; /* Ajustar a animação para dispositivos móveis */
+  }
+}
+
+@keyframes moveCarouselMobile {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(-300px);
+  }
+  75% {
+    transform: translateX(-450px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
