@@ -658,31 +658,41 @@ footer {
 
 @media (max-width: 768px) {
 
- /* Botão para abrir o menu */
 .menu-toggle {
   display: block;
-  position: fixed;  /* Posiciona o botão fixo na tela */
+  position: fixed;  
   top: 20px;
   right: 20px;
-  z-index: 20; /* Coloca o botão acima do menu */
+  z-index: 20; 
 }
 
-/* Menu de navegação */
+.menu-toggle i {
+  transition: color 0.3s ease;
+}
+
+.menu-toggle i.fa-times {
+  color: red; 
+}
+
+.menu-toggle i.fa-bars {
+  color: black; 
+}
+
 .nav-links {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
-  height: 100vh; /* Faz o menu ocupar a tela inteira */
-  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0.8); 
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0;
   box-shadow: none;
-  z-index: 10; /* Garantir que o menu fique acima de outros elementos */
-  transition: all 0.3s ease; /* Animação suave ao abrir e fechar */
+  z-index: 10; 
+  transition: all 0.3s ease; 
 }
 
 /* Menu aberto */

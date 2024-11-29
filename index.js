@@ -4,11 +4,23 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+const menuIcon = menuToggle.querySelector('i');
 let currentSlide = 0;
 
-menuToggle.addEventListener('click', () => {
+// Função para abrir e fechar o menu
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); 
     navLinks.classList.toggle('open');
+    
+    if (navLinks.classList.contains('open')) {
+      menuIcon.classList.remove('fa-bars');
+      menuIcon.classList.add('fa-times'); 
+    } else {
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars'); 
+    }
   });
+  
 
 function updateCarousel() {
     carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
