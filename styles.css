@@ -20,6 +20,8 @@ html{
 
 header{
   background-color: var(--primary-dark);
+  position: fixed;
+  width: 100%;
 }
 
 header nav {
@@ -390,6 +392,26 @@ section {
   font-size: 1.2rem;
 }
 
+.video-info a {
+  font-size: 30px; 
+  transition: color 0.3s ease;
+  display: block; /* Para garantir que o link ocupe a largura inteira do contêiner */
+  text-align: center; /* Centraliza o conteúdo do link */
+  margin: 0 auto; /* Centraliza o link horizontalmente */
+}
+
+.video-info i {
+  font-size: 40px; /* Tamanho do ícone */
+  color: #333; /* Cor padrão do ícone */
+  margin-top: 20px;
+}
+
+/* Efeito de hover no ícone */
+.video-info i:hover {
+  color: #f00; /* Cor vermelha ao passar o mouse */
+}
+
+
 #workshops {
   padding: 4rem 2rem;
   text-align: center;
@@ -657,11 +679,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header{
+    position: relative;
+  }
 
 .menu-toggle {
   display: block;
   position: fixed;  
-  top: 20px;
+  top: 30px;
   right: 20px;
   z-index: 20; 
 }
@@ -695,27 +720,23 @@ footer {
   transition: all 0.3s ease; 
 }
 
-/* Menu aberto */
 .nav-links.open {
   display: flex;
 }
 
-/* Links dentro do menu */
 .nav-links a {
-  color: white; /* Texto branco */
+  color: white; 
   font-size: 2rem;
   text-align: center;
   padding: 1rem;
-  text-decoration: none; /* Remove o sublinhado */
+  text-decoration: none; 
   transition: color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse sobre os links */
 .nav-links a:hover {
-  color: #f39c12; /* Cor ao passar o mouse */
+  color: #f39c12; 
 }
 
-/* Botão de fechar dentro do menu */
 .close-btn {
   position: absolute;
   top: 20px;
@@ -728,7 +749,6 @@ footer {
   z-index: 15;
 }
 
-/* Caso queira fazer o botão de fechar ser visível e centralizado */
 .close-btn:focus {
   outline: none;
 }
@@ -769,6 +789,11 @@ footer {
     
     .video-info h3 {
         font-size: 1.1rem;
+    }
+
+    .video-info i {
+      font-size: 30px; 
+      margin-top: 10px; 
     }
     
     .video-info p {
