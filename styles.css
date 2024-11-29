@@ -232,6 +232,41 @@ section {
   padding: 1.5rem;
 }
 
+#oficinas {
+  padding: 50px 20px;
+  background-color: var(--primary-color);
+}
+
+.oficinas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.oficina-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+}
+
+.oficina-info {
+  padding: 15px;
+}
+
+.oficina-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.oficina-info p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 10px;
+}
+
 .carousel {
   max-width: 1200px;
   margin: 0 auto;
@@ -670,6 +705,22 @@ footer {
 
   .carousel-wrapper {
     animation: moveCarouselMobile 10s linear infinite; /* Ajustar a animação para dispositivos móveis */
+  }
+
+  #oficinas {
+    padding: 30px 15px;
+  }
+
+  .oficina-card {
+    padding: 8px;
+  }
+
+  .oficina-info h3 {
+    font-size: 1rem;
+  }
+
+  .oficina-info p {
+    font-size: 0.8rem;
   }
 }
 
