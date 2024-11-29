@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 :root {
   --primary-color: #FFD700;  /* Amarelo dourado */
   --primary-dark: #FFC700;   /* Amarelo dourado escuro */
@@ -11,17 +13,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 html{
   scroll-behavior: smooth;
 }
 
-header{
+header {
   background-color: var(--primary-dark);
   position: fixed;
   width: 100%;
+  top: 0;
+  left: 0; 
+  z-index: 1000; 
 }
 
 header nav {
