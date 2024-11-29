@@ -2,7 +2,13 @@ const carousel = document.querySelector('.carousel-container');
 const slides = document.querySelectorAll('.carousel-slide');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 let currentSlide = 0;
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
 
 function updateCarousel() {
     carousel.style.transform = `translateX(-${currentSlide * 100}%)`;

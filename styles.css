@@ -18,21 +18,31 @@ html{
   scroll-behavior: smooth;
 }
 
-header {
-  background-color: var(--primary-color);
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: var(--shadow);
+header{
+  background-color: var(--primary-dark);
 }
 
-nav {
+header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 1rem;
+  margin-right: 50px;
+  margin-left: 10px;
+}
+
+.nav-links {
+  font-size: 18px;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .sobre {
@@ -647,6 +657,73 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+ /* Botão para abrir o menu */
+.menu-toggle {
+  display: block;
+  position: fixed;  /* Posiciona o botão fixo na tela */
+  top: 20px;
+  right: 20px;
+  z-index: 20; /* Coloca o botão acima do menu */
+}
+
+/* Menu de navegação */
+.nav-links {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Faz o menu ocupar a tela inteira */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: none;
+  z-index: 10; /* Garantir que o menu fique acima de outros elementos */
+  transition: all 0.3s ease; /* Animação suave ao abrir e fechar */
+}
+
+/* Menu aberto */
+.nav-links.open {
+  display: flex;
+}
+
+/* Links dentro do menu */
+.nav-links a {
+  color: white; /* Texto branco */
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none; /* Remove o sublinhado */
+  transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre os links */
+.nav-links a:hover {
+  color: #f39c12; /* Cor ao passar o mouse */
+}
+
+/* Botão de fechar dentro do menu */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 15;
+}
+
+/* Caso queira fazer o botão de fechar ser visível e centralizado */
+.close-btn:focus {
+  outline: none;
+}
+
+  
   .logo-text {
    font-size: 18px;
 }
