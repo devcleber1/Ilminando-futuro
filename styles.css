@@ -60,7 +60,6 @@ nav {
 
 #parcerias {
   padding: 4rem 2rem;
-  background-color: var(--background-light);
   text-align: center;
 }
 
@@ -71,20 +70,21 @@ nav {
 }
 
 .partnership-carousel {
-  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do container */
-  width: 100%;
+  overflow: hidden; /* Oculta itens fora da área visível */
+  width: 100%; /* Largura total da seção */
   position: relative;
+  height: 200px; /* Altura fixa para o carrossel */
 }
 
 .carousel-wrapper {
-  display: flex;
-  animation: moveCarousel 15s linear infinite; /* Move o carrossel continuamente */
+  display: flex; /* Itens lado a lado */
+  animation: contornarPagina 20s linear infinite; /* Animação suave e contínua */
 }
 
 .carousel-item {
-  flex: 0 0 auto; /* Impede o item de crescer ou encolher */
-  width: 150px; /* Largura menor para as logos */
-  margin: 0 1rem; /* Espaço entre os itens */
+  flex: 0 0 auto; 
+  width: 130px;
+  margin: 0 1rem; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,24 +95,16 @@ nav {
   height: auto;
 }
 
-/* Animação para mover o carrossel a partir de uma posição específica */
-@keyframes moveCarousel {
+/* Animação para o carrossel */
+@keyframes contornarPagina {
   0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-200px); /* Mover para a esquerda */
-  }
-  50% {
-    transform: translateX(-400px); /* Move mais para a esquerda */
-  }
-  75% {
-    transform: translateX(-600px); /* Move ainda mais para a esquerda */
+    transform: translateX(100%); /* Começa fora da tela à direita */
   }
   100% {
-    transform: translateX(0); /* Retorna ao início para o ciclo */
+    transform: translateX(-100%); /* Sai pela esquerda e reaparece */
   }
 }
+
 
 
 .logo {
