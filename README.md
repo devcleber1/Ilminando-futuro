@@ -37,8 +37,6 @@ Clique na imagem para assistir ao vídeo no YouTube.
 - **Informações sobre a ONG**: Conheça a história, a missão e os valores.
 - **Seja um voluntário**: Formulário para se inscrever como voluntário.
 - **Doe agora**: Facilite contribuições financeiras diretamente pelo site.
-- **Blog e Notícias**: Acompanhe as últimas atualizações e projetos da ONG.
-- **Área para parceiros**: Espaço dedicado a parceiros e apoiadores.
 
 ---
 
