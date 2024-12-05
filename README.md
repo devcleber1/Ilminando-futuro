@@ -14,7 +14,7 @@ Com programas inovadores e atividades que engajam e inspiram, buscamos converter
 
 Confira abaixo o vídeo da música da ONG:
 
-[![Demonstração do Iluminando o Futuro](https://img.youtube.com/vi/B5FJMsq-YmQ/maxresdefault.jpg)](https://youtu.be/B5FJMsq-YmQ?si=rQLMSkWSWdJWuT3L)
+[Demonstração do Iluminando o Futuro](https://youtu.be/B5FJMsq-YmQ?si=rQLMSkWSWdJWuT3L)
 
 Clique na imagem para assistir ao vídeo no YouTube.
 
