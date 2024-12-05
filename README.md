@@ -42,11 +42,9 @@ Clique na imagem para assistir ao vídeo no YouTube.
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Frontend**: React.js
-- **Backend**: Node.js com Express
-- **Banco de Dados**: PostgreSQL
-- **Estilização**: Styled Components
-- **Outras Bibliotecas**: Axios, React Router, entre outras.
+- **HTML**
+- **CSS**
+- **JavaScript**
 
 ---
 
